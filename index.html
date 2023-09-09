@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Resume</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: lightblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        min-height: 1000px;
+        background: #ffff;
+        margin: 50px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        box-shadow: 0 35px 55px rgba(0, 0, 0, 0.);
+    }
+
+    .container .left-side {
+        position: relative;
+        background: #003147;
+        padding: 60px;
+    }
+
+    .left-side .profile-text {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #fcfdfd;
+    }
+
+    .profile-text .profilepics {
+        position: relative;
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid goldenrod;
+    }
+
+    .profilepics img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        text-align: center;
+    }
+
+    .profile-text h2 {
+        font-size: 1.4rem;
+        color: #fcfdfd;
+        margin-top: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        line-height: 1.4rem;
+        letter-spacing: 1px;
+    }
+
+    .contact-info {
+        padding-top: 40px;
+    }
+
+    .tittle {
+        color: goldenrod;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+
+    .contact-info ul {
+        position: relative;
+    }
+
+    .contact-info ul li {
+        position: relative;
+        list-style: none;
+        color: #fcfdfd;
+        margin: 20px 0;
+        cursor: pointer;
+    }
+
+    .contact-info ul li .icon{
+        display: inline-block;
+        width: 30px;
+        font-size: 18px;
+        /* color: goldenrod; */
+        color: #03a9f4;
+    }
+
+    .contact-info ul li span {
+        color: #ffff;
+        font-weight: 300;
+    }
+
+    .contact-info.education ul li {
+        position: relative;
+        margin-bottom: 25px;
+    }
+
+    .contact-info.education h5 {
+        color: #03a9f4;
+        font-weight: 500;
+    }
+
+    .contact-info.education h4 {
+        color: #fcfdfd;
+        font-weight: 500;
+        margin: 5px 0;
+    }
+
+    .contact-info.language .percentage {
+        position: relative;
+        width: 100%;
+        height: 6px;
+        background: black;
+        display: block;
+        margin-top: 5px;
+        border-radius: 5px;
+    }
+
+    .contact-info.language .percentage div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: #03a9f4;
+        border-radius: 5pxhu;
+        animation: level 4s ease 1s infinite;
+    }
+
+    @keyframes level {
+        from {
+            width: 0;
+        }
+    }
+
+
+    .container .right-side {
+        position: relative;
+        background: #fcfdfd;
+        padding: 60px;
+    }
+
+    .about {
+        margin-bottom: 50px;
+    }
+
+    .about:last-child {
+        margin-bottom: 0;
+    }
+
+    .about h1 {
+        color: goldenrod;
+        /* color: #003147; */
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        font-weight: bolder;
+    }
+
+    p {
+        color: #333;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .about span{
+        font-size: 45px;
+    }
+    .about strong{
+        /* font-weight: normal; */
+        color: goldenrod;
+    }
+
+    .work h2 {
+        font-size: 20px;
+        font-weight: normal;
+        padding: 5px 0;
+        letter-spacing: 1px;
+    }
+
+    .skills .box {
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        justify-content: center;
+        align-items: center;
+        margin: 25px 0;
+    }
+
+    .skills .box h4 {
+        text-transform: uppercase;
+        color: #848c99;
+        font-weight: 500;
+    }
+
+    .skills .box .percentage {
+        position: relative;
+        width: 100%;
+        height: 12px;
+        background-color: #f0f0f0;
+    }
+
+    .skills .box .percentage div {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        height: 100%;
+        background-color: #03a9f4;
+        animation: level 4s ease 1s infinite;
+    }
+
+    .interest ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .interest ul li {
+        list-style: none;
+        color: #0c0c0c;
+        font-weight: 500;
+        margin: 15px 0;
+    }
+    .interest ul li .fa-solid{
+        position: relative;
+        color: #03a9f4;
+        font-size: 18px;
+        width: 20px;
+        margin :0px 10px;
+    }
+
+    @media (max-width:1000px) {
+        .container {
+            margin: 10px 0;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .interest ul {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width:600px) {
+        .skills .box {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .interest ul {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+</style>
+
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="profile-text">
+                <div class="profilepics">
+                    <img src="Photo-min.jpg" alt="Profile-Photo">
+                </div>
+                <h2>Manish Sharma</h2>
+            </div>
+            <div class="contact-info">
+                <h3 class="tittle">Contact</h3>
+                <ul>
+                    <li>
+                        <span class="icon"><i class="fa-solid fa-phone"></i>
+                        </span>
+                        <span class="text">+91 965360619</span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <span class="text">sharma07ji@gmail.com</span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </span>
+                        <span class="text">www.linkedin.com</span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <i class="fa-brands fa-github"></i>
+                        </span>
+                        <span class="text">www.github.in</span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </span>
+                        <span class="text">Hoshiarpur, Punjab, India</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact-info education">
+                <h3 class="tittle">Education</h3>
+                <ul>
+                    <li>
+                        <h5>2020-2023</h5>
+                        <h4>Bachelor of Computer Application</h4>
+                        <h4>Panjab University</h4>
+                    </li>
+                    <li>
+                        <h5>2018-2020</h5>
+                        <h4>Senior Secondary</h4>
+                        <h4>P.S.E.B</h4>
+                    </li>
+                    <li>
+                        <h5>2005-2018</h5>
+                        <h4> Marticulation
+                        </h4>
+                        <h4>P.S.E.B</h4>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact-info language">
+                <h3 class="tittle">language</h3>
+                <ul>
+                    <li>
+                        <span class="text">English</span>
+                        <span class="percentage">
+                            <div style="width: 30%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">Hindi</span>
+                        <span class="percentage">
+                            <div style="width: 90%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">Punjabi</span>
+                        <span class="percentage">
+                            <div style="width: 65%;"></div>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-side">
+
+            <div class="about objective">
+                <h1 class="tittle">Objective</h1>
+                <p> To work with an organization where can learn new skills and increase my abilities over the organizational goals as well as myself</p>
+            </div>
+
+            <div class="about">
+                <h1 class="title">About</h1>
+                <p>
+                    <span>Hi</span> I'm Manish Kumar Sharma. I live in Punjab. I have done my graduation in 2023. I am I am <strong> Front-End Web Developer </strong> and also <strong> UI/UX Web Designer </strong>. I have made a couple of project using this skills.
+                    <br> 
+                     Righ now, I am working on learn some Framework so that i can improve my skills.</p>
+                   
+            </div>
+
+            <div class="about work">
+                <h1 class="tittle">Work Experience</h1>
+                <h2>Fresher</h2>
+            </div>
+
+            <div class="about skills">
+                <h1 class="tittle">Professional Skills</h1>
+                <div class="box">
+                    <h4>HTML</h4>
+                    <div class="percentage">
+                        <div style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>CSS</h4>
+                    <div class="percentage">
+                        <div style="width: 55%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>JavaScript</h4>
+                    <div class="percentage">
+                        <div style="width: 30%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>GITHUB</h4>
+                    <div class="percentage">
+                        <div style="width: 25%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Microsoft Words</h4>
+                    <div class="percentage">
+                        <div style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Video Editing</h4>
+                    <div class="percentage">
+                        <div style="width: 65%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about interest">
+                <h1 class="tittle">Hobbies</h1>
+                <ul>
+                    <li><i class="fa-solid fa-baseball"></i>Sports</li>
+                    <li><i class="fa-solid fa-music"></i>Music</li>
+                    <li><i class="fa-solid fa-book-open-reader"></i>Reading</li>
+                    <li><i class="fa-solid fa-cookie"></i>Cooking</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

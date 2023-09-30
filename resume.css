@@ -1,0 +1,331 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 1000px;
+  background: #ffff;
+  margin: 50px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  box-shadow: 0 35px 55px rgba(0, 0, 0, 0);
+}
+
+.container .left-side {
+  position: relative;
+  background: #003147;
+  padding: 60px;
+}
+
+.left-side .profile-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #fcfdfd;
+}
+
+.profile-text .profilepics {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid goldenrod;
+}
+
+.profilepics img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  text-align: center;
+}
+
+.profile-text h2 {
+  font-size: 1.4rem;
+  color: #fcfdfd;
+  margin-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.contact-info {
+  padding-top: 40px;
+}
+
+.tittle {
+  color: goldenrod;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.contact-info ul {
+  position: relative;
+}
+
+.contact-info ul li {
+  position: relative;
+  list-style: none;
+  color: #fcfdfd;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.contact-info ul li .icon {
+  display: inline-block;
+  width: 30px;
+  font-size: 18px;
+  color: #03a9f4;
+}
+
+.contact-info ul li span {
+  color: #ffff;
+  font-weight: 300;
+}
+.contact-info ul li span a {
+  text-decoration: none;
+  color: #fcfdfd;
+  transition: color 0.3s;
+}
+.contact-info ul li span a:hover {
+  color: goldenrod;
+}
+
+.contact-info.education ul li {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.contact-info.education h5 {
+  color: #03a9f4;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.contact-info.education h4 {
+  color: #fcfdfd;
+  font-weight: 500;
+  margin: 5px 0;
+}
+.contact-info.education h4.Perct {
+  color: goldenrod;
+  font-weight: bolder;
+}
+
+.contact-info.language .percentage {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: black;
+  display: block;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.contact-info.language .percentage div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #03a9f4;
+  border-radius: 5px;
+  animation: level 4s ease 1s;
+}
+
+@keyframes level {
+  from {
+    width: 0;
+  }
+}
+
+.container .right-side {
+  position: relative;
+  background: #fcfdfd;
+  padding: 60px;
+}
+
+.about {
+  margin-bottom: 50px;
+}
+
+.about:last-child {
+  margin-bottom: 0;
+}
+
+.about h1 {
+  color: goldenrod;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  font-weight: bolder;
+}
+
+p {
+  color: #333;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.about span {
+  font-size: 45px;
+}
+.about strong {
+  color: goldenrod;
+}
+
+.work h2 {
+  font-size: 20px;
+  font-weight: normal;
+  padding: 5px 0;
+  letter-spacing: 1px;
+}
+
+.proj-link {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.proj-link h3 {
+  font-size: 25px;
+  font-weight: lighter;
+  color: #003147;
+}
+.proj-link ol {
+  padding: 10px 40px;
+  display: flex;
+  column-gap: 40px;
+  flex-wrap: wrap;
+}
+.proj-link ol li {
+  margin: 0 0 10px;
+}
+.proj-link a {
+  text-decoration: none;
+  font-size: 18px;
+  transition: text-decoration 0.3s, color 0.3s;
+}
+.proj-link a:hover{
+  text-decoration: underline;
+  color: red;
+}
+.proj-link a:active {
+  text-decoration: underline;
+  color: red;
+}
+
+.skills .box {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.skills .box h4 {
+  text-transform: uppercase;
+  color: #848c99;
+  font-weight: 500;
+}
+
+.skills .box .percentage {
+  position: relative;
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skills .box .percentage div {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  background-color: #03a9f4;
+  animation: level 4s ease 1s;
+}
+
+.interest ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.interest ul li {
+  list-style: none;
+  color: #0c0c0c;
+  font-weight: 500;
+  margin: 15px 0;
+}
+.interest ul li .fa-solid {
+  position: relative;
+  color: #03a9f4;
+  font-size: 18px;
+  width: 20px;
+  margin: 0px 10px;
+}
+
+.footer {
+  width: 100%;
+  background: rgb(108, 108, 108);
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.footer p {
+  color: aliceblue;
+  font-size: 20px;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    margin: 10px 0;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .interest ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .skills .box {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .interest ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .tittle {
+    font-size: 20px;
+  }
+  .skills .box .percentage {
+    height: 8px;
+  }
+  .footer p {
+    font-size: 15px;
+  }
+}

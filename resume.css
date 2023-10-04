@@ -329,3 +329,9 @@ p {
     font-size: 15px;
   }
 }
+
+ @media screen and (max-width:530px) {
+  .proj-link ol{
+    flex-direction: column;
+  }
+ }
